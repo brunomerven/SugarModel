@@ -1,0 +1,87 @@
+SET ALL_REG /
+  'REGION1'
+/;
+SET REG /
+  'REGION1'                  'Initial internal region                           '
+/;
+SET PRC /
+  'ERBIG'                    'New Biogas+Engine                                 '
+  'UBSCBIG'                  'New BioMethane Plant                              '
+/;
+SET PRC_PRE /
+  'REGION1'   .'UBSCBIG'
+/;
+SET PRC_ELE /
+  'REGION1'   .'ERBIG'
+/;
+SET PRC_SEASON /
+  'REGION1'   .'UBSCBIG'
+/;
+SET PRC_DAYNIT /
+  'REGION1'   .'ERBIG'
+/;
+SET PRCTACTUNT /
+  'REGION1'.'ERBIG'.'PJ'
+  'REGION1'.'UBSCBIG'.'PJ'
+/;
+PARAMETER ANCAP_START /
+  'REGION1'                 .'ERBIG'                      2025
+  'REGION1'                 .'UBSCBIG'                    2025
+/;
+PARAMETER APRCACTUNT /
+  'REGION1'                 .'ERBIG'                   .'ISIELC'                     1
+  'REGION1'                 .'UBSCBIG'                 .'ISIBIG'                     1
+/;
+PARAMETER APRCCAPACT /
+  'REGION1'                 .'ERBIG'                      31.536
+  'REGION1'                 .'UBSCBIG'                    1
+/;
+PARAMETER ATOP_IN /
+  'REGION1'                 .'ERBIG'                   .'BCL'                        1
+  'REGION1'                 .'ERBIG'                   .'BCS'                        1
+  'REGION1'                 .'ERBIG'                   .'ISIBFC'                     1
+  'REGION1'                 .'ERBIG'                   .'ISIBIB'                     1
+  'REGION1'                 .'ERBIG'                   .'ISIBML'                     1
+  'REGION1'                 .'UBSCBIG'                 .'BCL'                        1
+  'REGION1'                 .'UBSCBIG'                 .'BCS'                        1
+  'REGION1'                 .'UBSCBIG'                 .'ISIBFC'                     1
+  'REGION1'                 .'UBSCBIG'                 .'ISIBIB'                     1
+  'REGION1'                 .'UBSCBIG'                 .'ISIBML'                     1
+/;
+PARAMETER ATOP_OUT /
+  'REGION1'                 .'ERBIG'                   .'ISIELC'                     1
+  'REGION1'                 .'UBSCBIG'                 .'ISIBIG'                     1
+/;
+       TABLE AACT_EFF
+                                                                                                                0     2018            2019            2020            2021            2022            2023            2024            2025            2026            2027            2028            2029            2030            2031            2032            2033            2034            2035            2036            2037            2038            2039            2040            
+  'REGION1'                 .'ERBIG'                   .'BCL'                     .'ANNUAL'                           .2                                                                                                                                                                                                                                                                                                                                                              
+  'REGION1'                 .'ERBIG'                   .'BCS'                     .'ANNUAL'                           .34                                                                                                                                                                                                                                                                                                                                                             
+  'REGION1'                 .'ERBIG'                   .'ISIBFC'                  .'ANNUAL'                           .18                                                                                                                                                                                                                                                                                                                                                             
+  'REGION1'                 .'ERBIG'                   .'ISIBIB'                  .'ANNUAL'                           .2                                                                                                                                                                                                                                                                                                                                                              
+  'REGION1'                 .'ERBIG'                   .'ISIBML'                  .'ANNUAL'                           .34                                                                                                                                                                                                                                                                                                                                                             
+  'REGION1'                 .'UBSCBIG'                 .'BCL'                     .'ANNUAL'                           .4                                                                                                                                                                                                                                                                                                                                                              
+  'REGION1'                 .'UBSCBIG'                 .'BCS'                     .'ANNUAL'                           .68                                                                                                                                                                                                                                                                                                                                                             
+  'REGION1'                 .'UBSCBIG'                 .'ISIBFC'                  .'ANNUAL'                           .36                                                                                                                                                                                                                                                                                                                                                             
+  'REGION1'                 .'UBSCBIG'                 .'ISIBIB'                  .'ANNUAL'                           .4                                                                                                                                                                                                                                                                                                                                                              
+  'REGION1'                 .'UBSCBIG'                 .'ISIBML'                  .'ANNUAL'                           .68                                                                                                                                                                                                                                                                                                                                                             
+;
+       TABLE ANCAP_AFS
+                                                                                                                0     2018            2019            2020            2021            2022            2023            2024            2025            2026            2027            2028            2029            2030            2031            2032            2033            2034            2035            2036            2037            2038            2039            2040            
+  'REGION1'                 .'ERBIG'                   .'ANNUAL'                  .'UP'                               .8                                                                                                                                                                                                                                                                                                                                                              
+  'REGION1'                 .'UBSCBIG'                 .'ANNUAL'                  .'UP'                               .8                                                                                                                                                                                                                                                                                                                                                              
+;
+       TABLE ANCAP_COST
+                                                          0     2018            2019            2020            2021            2022            2023            2024            2025            2026            2027            2028            2029            2030            2031            2032            2033            2034            2035            2036            2037            2038            2039            2040            
+  'REGION1'                 .'ERBIG'                            36552.18613737                                                                                                                                                                                                                                                                                                                                                  
+  'REGION1'                 .'UBSCBIG'                          893.8294432278                                                                                                                                                                                                                                                                                                                                                  
+;
+       TABLE ANCAP_FOM
+                                                          0     2018            2019            2020            2021            2022            2023            2024            2025            2026            2027            2028            2029            2030            2031            2032            2033            2034            2035            2036            2037            2038            2039            2040            
+  'REGION1'                 .'ERBIG'                            1785                                                                                                                                                                                                                                                                                                                                                            
+  'REGION1'                 .'UBSCBIG'                          89.38294432278                                                                                                                                                                                                                                                                                                                                                  
+;
+       TABLE ANCAPTLIFE
+                                                          0     2018            2019            2020            2021            2022            2023            2024            2025            2026            2027            2028            2029            2030            2031            2032            2033            2034            2035            2036            2037            2038            2039            2040            
+  'REGION1'                 .'ERBIG'                            20                                                                                                                                                                                                                                                                                                                                                              
+  'REGION1'                 .'UBSCBIG'                          20                                                                                                                                                                                                                                                                                                                                                              
+;

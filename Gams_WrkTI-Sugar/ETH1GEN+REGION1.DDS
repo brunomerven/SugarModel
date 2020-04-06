@@ -1,0 +1,64 @@
+SET ALL_REG /
+  'REGION1'
+/;
+SET REG /
+  'REGION1'                  'Initial internal region                           '
+/;
+SET PRC /
+  'UBSCBIE1'                 'New Ethanol 1st Gen                               '
+/;
+SET PRC_PRE /
+  'REGION1'   .'UBSCBIE1'
+/;
+SET PRC_SEASON /
+  'REGION1'   .'UBSCBIE1'
+/;
+SET PRCTACTUNT /
+  'REGION1'.'UBSCBIE1'.'PJ'
+/;
+PARAMETER ANCAP_START /
+  'REGION1'                 .'UBSCBIE1'                   2025
+/;
+PARAMETER APRCACTUNT /
+  'REGION1'                 .'UBSCBIE1'                .'BIE'                        1
+/;
+PARAMETER APRCCAPACT /
+  'REGION1'                 .'UBSCBIE1'                   1
+/;
+PARAMETER ATOP_IN /
+  'REGION1'                 .'UBSCBIE1'                .'BCS'                        1
+  'REGION1'                 .'UBSCBIE1'                .'ISIBML'                     1
+  'REGION1'                 .'UBSCBIE1'                .'ISIELC'                     1
+  'REGION1'                 .'UBSCBIE1'                .'ISIHET'                     1
+/;
+PARAMETER ATOP_OUT /
+  'REGION1'                 .'UBSCBIE1'                .'BIE'                        1
+  'REGION1'                 .'UBSCBIE1'                .'ISIBFC'                     1
+/;
+       TABLE AACT_EFF
+                                                                                                                0     2018            2019            2020            2021            2022            2023            2024            2025            2026            2027            2028            2029            2030            2031            2032            2033            2034            2035            2036            2037            2038            2039            2040            
+  'REGION1'                 .'UBSCBIE1'                .'BCS'                     .'ANNUAL'                           .6160908445627                                                                                                                                                                                                                                                                                                                                                  
+  'REGION1'                 .'UBSCBIE1'                .'ISIBML'                  .'ANNUAL'                           .6160908445627                                                                                                                                                                                                                                                                                                                                                  
+;
+       TABLE ANCAP_AFS
+                                                                                                                0     2018            2019            2020            2021            2022            2023            2024            2025            2026            2027            2028            2029            2030            2031            2032            2033            2034            2035            2036            2037            2038            2039            2040            
+  'REGION1'                 .'UBSCBIE1'                .'ANNUAL'                  .'UP'                               .8                                                                                                                                                                                                                                                                                                                                                              
+;
+       TABLE ANCAP_COST
+                                                          0     2018            2019            2020            2021            2022            2023            2024            2025            2026            2027            2028            2029            2030            2031            2032            2033            2034            2035            2036            2037            2038            2039            2040            
+  'REGION1'                 .'UBSCBIE1'                         973.0871810498                                                                                                                                                                                                                                                                                                                                                  
+;
+       TABLE ANCAP_FOM
+                                                          0     2018            2019            2020            2021            2022            2023            2024            2025            2026            2027            2028            2029            2030            2031            2032            2033            2034            2035            2036            2037            2038            2039            2040            
+  'REGION1'                 .'UBSCBIE1'                         50.59824685318                                                                                                                                                                                                                                                                                                                                                  
+;
+       TABLE ANCAPTLIFE
+                                                          0     2018            2019            2020            2021            2022            2023            2024            2025            2026            2027            2028            2029            2030            2031            2032            2033            2034            2035            2036            2037            2038            2039            2040            
+  'REGION1'                 .'UBSCBIE1'                         30                                                                                                                                                                                                                                                                                                                                                              
+;
+       TABLE APRCACTFLO
+                                                                                     0     2018            2019            2020            2021            2022            2023            2024            2025            2026            2027            2028            2029            2030            2031            2032            2033            2034            2035            2036            2037            2038            2039            2040            
+  'REGION1'                 .'UBSCBIE1'                .'ISIBFC'                           .2407003667722                                                                                                                                                                                                                                                                                                                                                  
+  'REGION1'                 .'UBSCBIE1'                .'ISIELC'                           3.60474153E-03                                                                                                                                                                                                                                                                                                                                                  
+  'REGION1'                 .'UBSCBIE1'                .'ISIHET'                           .1561548942627                                                                                                                                                                                                                                                                                                                                                  
+;

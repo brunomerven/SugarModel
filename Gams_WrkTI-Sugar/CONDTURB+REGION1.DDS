@@ -1,0 +1,72 @@
+SET ALL_REG /
+  'REGION1'
+/;
+SET REG /
+  'REGION1'                  'Initial internal region                           '
+/;
+SET COM_GRP /
+  'ISICHPNC-G'               'PCG for ISICHPNC (New CHP Plant With Condenser)   '
+/;
+SET PRC /
+  'ISICHPNC'                 'New CHP Plant With Condenser                      '
+/;
+SET PRC_CHP /
+  'REGION1'   .'ISICHPNC'
+/;
+SET PRC_SEASON /
+  'REGION1'   .'ISICHPNC'
+/;
+SET PRCTACTUNT /
+  'REGION1'.'ISICHPNC'.'PJ'
+/;
+PARAMETER ACOM_GMAP /
+  'REGION1'                 .'ISIELC'                  .'ISICHPNC-G'                 1
+  'REGION1'                 .'ISIHET'                  .'ISICHPNC-G'                 1
+/;
+PARAMETER ANCAP_START /
+  'REGION1'                 .'ISICHPNC'                   2025
+/;
+PARAMETER APRCACTUNT /
+  'REGION1'                 .'ISICHPNC'                .'ISICHPNC-G'                 1
+/;
+PARAMETER APRCCAPACT /
+  'REGION1'                 .'ISICHPNC'                   31.563
+/;
+PARAMETER ATOP_IN /
+  'REGION1'                 .'ISICHPNC'                .'BCL'                        1
+  'REGION1'                 .'ISICHPNC'                .'BIW'                        1
+  'REGION1'                 .'ISICHPNC'                .'INDCOA'                     1
+  'REGION1'                 .'ISICHPNC'                .'ISIBIB'                     1
+/;
+PARAMETER ATOP_OUT /
+  'REGION1'                 .'ISICHPNC'                .'ISIELC'                     1
+  'REGION1'                 .'ISICHPNC'                .'ISIHET'                     1
+/;
+       TABLE AACT_EFF
+                                                                                                                0     2018            2019            2020            2021            2022            2023            2024            2025            2026            2027            2028            2029            2030            2031            2032            2033            2034            2035            2036            2037            2038            2039            2040            
+  'REGION1'                 .'ISICHPNC'                .'ACTGRP'                  .'ANNUAL'                           .2137536183326                                                                                                                                                                                                                                                                                                                                                  
+;
+       TABLE ANCAP_AFS
+                                                                                                                0     2018            2019            2020            2021            2022            2023            2024            2025            2026            2027            2028            2029            2030            2031            2032            2033            2034            2035            2036            2037            2038            2039            2040            
+  'REGION1'                 .'ISICHPNC'                .'ANNUAL'                  .'UP'                               .6307149796497                                                                                                                                                                                                                                                                                                                                                  
+;
+       TABLE ANCAP_CEH
+                                                          0     2018            2019            2020            2021            2022            2023            2024            2025            2026            2027            2028            2029            2030            2031            2032            2033            2034            2035            2036            2037            2038            2039            2040            
+  'REGION1'                 .'ISICHPNC'                        EPS                                                                                                                                                                                                                                                                                                                                                              
+;
+       TABLE ANCAP_CHPR
+                                                                                     0     2018            2019            2020            2021            2022            2023            2024            2025            2026            2027            2028            2029            2030            2031            2032            2033            2034            2035            2036            2037            2038            2039            2040            
+  'REGION1'                 .'ISICHPNC'                .'FX'                         3     2.787074891287                                                                                                                                                                                                                                                                                                                                                  
+;
+       TABLE ANCAP_COST
+                                                          0     2018            2019            2020            2021            2022            2023            2024            2025            2026            2027            2028            2029            2030            2031            2032            2033            2034            2035            2036            2037            2038            2039            2040            
+  'REGION1'                 .'ISICHPNC'                         38336.53386454                                                                                                                                                                                                                                                                                                                                                  
+;
+       TABLE ANCAP_FOM
+                                                          0     2018            2019            2020            2021            2022            2023            2024            2025            2026            2027            2028            2029            2030            2031            2032            2033            2034            2035            2036            2037            2038            2039            2040            
+  'REGION1'                 .'ISICHPNC'                         3605                                                                                                                                                                                                                                                                                                                                                            
+;
+       TABLE ANCAPTLIFE
+                                                          0     2018            2019            2020            2021            2022            2023            2024            2025            2026            2027            2028            2029            2030            2031            2032            2033            2034            2035            2036            2037            2038            2039            2040            
+  'REGION1'                 .'ISICHPNC'                         30                                                                                                                                                                                                                                                                                                                                                              
+;

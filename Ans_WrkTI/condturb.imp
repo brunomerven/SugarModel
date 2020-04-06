@@ -1,0 +1,47 @@
+SCENARIO	_GLOBAL,REGION1
+Creation Date:	2020/04/06	2:37:52 PM
+Created By:	Export from database C:\Models\SugarModel\Sugar_Model_v10_GitExperiments.mdb
+ANSWER Version:	6.9.22
+Scenario:	CONDTURB	Condensing Turbine	
+Time Periods:	0	2018	2019	2020	2021	2022	2023	2024	2025	2026	2027	2028	2029	2030	2031	2032	2033	2034	2035	2036	2037	2038	2039	2040
+
+REGIONS	_GLOBAL,REGION1
+_GLOBAL	Special region for data parameters with no REG arg	ALL_REG	
+REGION1	Initial internal region	ALL_REG,REG	
+
+ITEMS	_GLOBAL
+
+TS DATA	_GLOBAL
+
+TID DATA	_GLOBAL
+
+ITEMS	REGION1
+	D	ISICHPNC-G	PCG for ISICHPNC (New CHP Plant With Condenser)		COM_GRP,COM_GRPTRU	
+	T	ISICHPNC	New CHP Plant With Condenser	PJ,GW	PRC,CHP,SEASON	
+
+TS DATA	REGION1
+	ACT_EFF	ISICHPNC	-	ACTGRP	-	ANNUAL	-	0	0.213753618332689	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	NCAP_AFS	ISICHPNC	-	-	-	ANNUAL	UP	0	0.630714979649767	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	NCAP_CEH	ISICHPNC	-	-	-	-	-	0	0	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	NCAP_CHPR	ISICHPNC	-	-	-	-	FX	3	2.7870748912879	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	NCAP_COST	ISICHPNC	-	-	-	-	-	0	38336.5338645418	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	NCAP_FOM	ISICHPNC	-	-	-	-	-	0	3605	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	NCAP_TLIFE	ISICHPNC	-	-	-	-	-	0	30	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+
+TID DATA	REGION1
+	COM_GMAP	-	ISIELC	ISICHPNC-G	-	-	-	1	
+	COM_GMAP	-	ISIHET	ISICHPNC-G	-	-	-	1	
+	NCAP_START	ISICHPNC	-	-	-	-	-	2025	
+	PRC_ACTUNT	ISICHPNC	-	ISICHPNC-G	-	-	-	1	
+	PRC_CAPACT	ISICHPNC	-	-	-	-	-	31.563	
+	TOP-IN	ISICHPNC	BCL	-	-	-	-	1	
+	TOP-IN	ISICHPNC	BIW	-	-	-	-	1	
+	TOP-IN	ISICHPNC	INDCOA	-	-	-	-	1	
+	TOP-IN	ISICHPNC	ISIBIB	-	-	-	-	1	
+	TOP-OUT	ISICHPNC	ISIELC	-	-	-	-	1	
+	TOP-OUT	ISICHPNC	ISIHET	-	-	-	-	1	
+
+TS TRADE	_GLOBAL,REGION1
+
+TID TRADE	_GLOBAL,REGION1
+

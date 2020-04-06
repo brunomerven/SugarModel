@@ -1,0 +1,616 @@
+SET ALL_REG /
+  'REGION1'
+/;
+SET REG /
+  'REGION1'                  'Initial internal region                           '
+/;
+SET COM_GRP /
+  'ACTGRP'                   'Activity-related Group                            '
+  'BCL'                      'Recoverable leaves                                '
+  'BCS'                      'Cane Syrup (A-Mollasses)                          '
+  'BIB'                      'Bagasse Sales to Other sectors                    '
+  'BIE'                      'Ethanol                                           '
+  'BIG'                      'Biogas Sold to Market                             '
+  'BIM'                      'C-Molasses sold to market                         '
+  'BIW'                      'Biomass Woodchips                                 '
+  'BSC'                      'Cane-into factory                                 '
+  'CH4PWR'                   'Methane - Power Sector                            '
+  'CO2PWR'                   'Carbon dioxide - Power Sector                     '
+  'DEM'                      'Demand Commodity Type                             '
+  'ELC'                      'Electricity                                       '
+  'ELCC'                     'Electricity Bulk                                  '
+  'ELCDEM'                   'Electricity Demand                                '
+  'ENV'                      'Environmental Commodity Type                      '
+  'FIN'                      'Financial Commodity Type                          '
+  'INDCOA'                   'Industry Coal                                     '
+  'ISIBFC'                   'Filter Cake                                       '
+  'ISIBIB'                   'Bagasse                                           '
+  'ISIBIG'                   'Sugar Industry Biogas                             '
+  'ISIBML'                   'C-Molasses                                        '
+  'ISICHPEX-G'               'PCG for ISICHPEX (Existing CHP Plant)             '
+  'ISIELC'                   'Sugar Industry Electricity                        '
+  'ISIHET'                   'Steam From CHP                                    '
+  'ISISUG'                   'Sugar                                             '
+  'MAT'                      'Material Commodity Type                           '
+  'N2OPWR'                   'Nitrous Oxide - Power Sector                      '
+  'NRG'                      'Energy Commodity Type                             '
+  'PWRCLE'                   'Eskom Coal                                        '
+  'PWRGAS'                   'Natural Gas                                       '
+  'SUG'                      'Sugar Exports                                     '
+  'SUGDEM'                   'Sugar Demand Domestic Market                      '
+  'TRABIE'                   'Ethanol to market                                 '
+  'ZZZ'                      'Dummy Backstop Commodity                          '
+/;
+SET COM /
+  'BCL'                      'Recoverable leaves                                '
+  'BCS'                      'Cane Syrup (A-Mollasses)                          '
+  'BIB'                      'Bagasse Sales to Other sectors                    '
+  'BIE'                      'Ethanol                                           '
+  'BIG'                      'Biogas Sold to Market                             '
+  'BIM'                      'C-Molasses sold to market                         '
+  'BIW'                      'Biomass Woodchips                                 '
+  'BSC'                      'Cane-into factory                                 '
+  'CH4PWR'                   'Methane - Power Sector                            '
+  'CO2PWR'                   'Carbon dioxide - Power Sector                     '
+  'ELC'                      'Electricity                                       '
+  'ELCC'                     'Electricity Bulk                                  '
+  'ELCDEM'                   'Electricity Demand                                '
+  'INDCOA'                   'Industry Coal                                     '
+  'ISIBFC'                   'Filter Cake                                       '
+  'ISIBIB'                   'Bagasse                                           '
+  'ISIBIG'                   'Sugar Industry Biogas                             '
+  'ISIBML'                   'C-Molasses                                        '
+  'ISIELC'                   'Sugar Industry Electricity                        '
+  'ISIHET'                   'Steam From CHP                                    '
+  'ISISUG'                   'Sugar                                             '
+  'N2OPWR'                   'Nitrous Oxide - Power Sector                      '
+  'PWRCLE'                   'Eskom Coal                                        '
+  'PWRGAS'                   'Natural Gas                                       '
+  'SUG'                      'Sugar Exports                                     '
+  'SUGDEM'                   'Sugar Demand Domestic Market                      '
+  'TRABIE'                   'Ethanol to market                                 '
+  'ZZZ'                      'Dummy Backstop Commodity                          '
+/;
+SET COM_DEM /
+  'REGION1'   .'ELCDEM'
+  'REGION1'   .'SUGDEM'
+/;
+SET COM_NRG /
+  'REGION1'   .'BCL'
+  'REGION1'   .'BCS'
+  'REGION1'   .'BIB'
+  'REGION1'   .'BIE'
+  'REGION1'   .'BIG'
+  'REGION1'   .'BIM'
+  'REGION1'   .'BIW'
+  'REGION1'   .'BSC'
+  'REGION1'   .'ELC'
+  'REGION1'   .'ELCC'
+  'REGION1'   .'INDCOA'
+  'REGION1'   .'ISIBFC'
+  'REGION1'   .'ISIBIB'
+  'REGION1'   .'ISIBIG'
+  'REGION1'   .'ISIBML'
+  'REGION1'   .'ISIELC'
+  'REGION1'   .'ISIHET'
+  'REGION1'   .'ISISUG'
+  'REGION1'   .'PWRCLE'
+  'REGION1'   .'PWRGAS'
+  'REGION1'   .'SUG'
+  'REGION1'   .'TRABIE'
+  'REGION1'   .'ZZZ'
+/;
+SET COM_ENV /
+  'REGION1'   .'CH4PWR'
+  'REGION1'   .'CO2PWR'
+  'REGION1'   .'N2OPWR'
+/;
+SET COM_ANNUAL /
+  'REGION1'   .'BIB'
+  'REGION1'   .'BIE'
+  'REGION1'   .'BIG'
+  'REGION1'   .'BIM'
+  'REGION1'   .'CH4PWR'
+  'REGION1'   .'CO2PWR'
+  'REGION1'   .'INDCOA'
+  'REGION1'   .'ISIBFC'
+  'REGION1'   .'ISIBML'
+  'REGION1'   .'ISISUG'
+  'REGION1'   .'N2OPWR'
+  'REGION1'   .'PWRCLE'
+  'REGION1'   .'PWRGAS'
+  'REGION1'   .'SUG'
+  'REGION1'   .'SUGDEM'
+  'REGION1'   .'TRABIE'
+  'REGION1'   .'ZZZ'
+/;
+SET COM_SEASON /
+  'REGION1'   .'BCL'
+  'REGION1'   .'BCS'
+  'REGION1'   .'BIW'
+  'REGION1'   .'BSC'
+  'REGION1'   .'ISIBIB'
+  'REGION1'   .'ISIBIG'
+  'REGION1'   .'ISIHET'
+/;
+SET COM_DAYNIT /
+  'REGION1'   .'ELC'
+  'REGION1'   .'ELCC'
+  'REGION1'   .'ELCDEM'
+  'REGION1'   .'ISIELC'
+/;
+SET COM_NRGELC /
+  'REGION1'   .'ELC'
+  'REGION1'   .'ELCC'
+  'REGION1'   .'ISIELC'
+/;
+SET COM_NRGFOS /
+  'REGION1'   .'INDCOA'
+  'REGION1'   .'PWRCLE'
+  'REGION1'   .'PWRGAS'
+  'REGION1'   .'ZZZ'
+/;
+SET COM_NRGLIM /
+  'REGION1'   .'BCL'
+  'REGION1'   .'BCS'
+  'REGION1'   .'BIB'
+  'REGION1'   .'BIE'
+  'REGION1'   .'BIG'
+  'REGION1'   .'BIM'
+  'REGION1'   .'BIW'
+  'REGION1'   .'BSC'
+  'REGION1'   .'ISIBFC'
+  'REGION1'   .'ISIBIB'
+  'REGION1'   .'ISIBIG'
+  'REGION1'   .'ISIBML'
+  'REGION1'   .'ISISUG'
+  'REGION1'   .'SUG'
+  'REGION1'   .'TRABIE'
+/;
+SET COM_NRGLTH /
+  'REGION1'   .'ISIHET'
+/;
+SET COM_DEMOTH /
+  'REGION1'   .'ELCDEM'
+  'REGION1'   .'SUGDEM'
+/;
+SET COM_ENVGHG /
+  'REGION1'   .'CH4PWR'
+  'REGION1'   .'CO2PWR'
+  'REGION1'   .'N2OPWR'
+/;
+SET TOTALS /
+  'TOTAL_COM'                'TOTAL over Relevant Commodities                   '
+/;
+SET GLO /
+  '_'                        'Global                                            '
+/;
+SET PRC /
+  'EELCDEM'                  'Electricity Demand                                '
+  'ISICHPEX'                 'Existing CHP Plant                                '
+  'ISIMIL'                   'Existing Milling Plant                            '
+  'ISISUGDEM'                'Sugar to Local Market                             '
+  'MNZZZ'                    'Backstop for whole system                         '
+  'PEXSUG'                   'Sugar to Export Market                            '
+  'UBSCSUG'                  'B and C Stages                                    '
+  'XBCL'                     'Recoverable Leaves Supply                         '
+  'XBIW'                     'Biomass Woodchip Supply                           '
+  'XBSC'                     'Cane_Into Factory Supply                          '
+  'XINDBIB'                  'Bagasse to Local Market                           '
+  'XINDBIM'                  'Molasses to Local Market                          '
+  'XINDCOA'                  'Industry Coal Supply                              '
+  'XISIBIGEXP'               'Biomethane to Local Market                        '
+  'XISIELC'                  'Electricity from Eskom                            '
+  'XISIELCEXP'               'Export to Grid from Sugar                         '
+  'XTRAOGS'                  'Ethanol to Local Market                           '
+  'ZZBKNRG'                  'Backstop for all commodities                      '
+/;
+SET PRC_XTRACT /
+  'REGION1'   .'MNZZZ'
+  'REGION1'   .'XBCL'
+  'REGION1'   .'XBIW'
+  'REGION1'   .'XBSC'
+  'REGION1'   .'XINDCOA'
+  'REGION1'   .'XISIELC'
+/;
+SET PRC_PRE /
+  'REGION1'   .'ISIMIL'
+  'REGION1'   .'MNZZZ'
+  'REGION1'   .'PEXSUG'
+  'REGION1'   .'UBSCSUG'
+  'REGION1'   .'XBCL'
+  'REGION1'   .'XBIW'
+  'REGION1'   .'XBSC'
+  'REGION1'   .'XINDBIB'
+  'REGION1'   .'XINDBIM'
+  'REGION1'   .'XINDCOA'
+  'REGION1'   .'XISIBIGEXP'
+  'REGION1'   .'XISIELC'
+  'REGION1'   .'XISIELCEXP'
+  'REGION1'   .'XTRAOGS'
+  'REGION1'   .'ZZBKNRG'
+/;
+SET PRC_CHP /
+  'REGION1'   .'ISICHPEX'
+/;
+SET PRC_DMD /
+  'REGION1'   .'EELCDEM'
+  'REGION1'   .'ISISUGDEM'
+/;
+SET PRC_ANNUAL /
+  'REGION1'   .'ISISUGDEM'
+  'REGION1'   .'MNZZZ'
+  'REGION1'   .'PEXSUG'
+  'REGION1'   .'XBCL'
+  'REGION1'   .'XBIW'
+  'REGION1'   .'XINDBIB'
+  'REGION1'   .'XINDBIM'
+  'REGION1'   .'XINDCOA'
+  'REGION1'   .'XISIBIGEXP'
+  'REGION1'   .'XTRAOGS'
+  'REGION1'   .'ZZBKNRG'
+/;
+SET PRC_SEASON /
+  'REGION1'   .'ISICHPEX'
+  'REGION1'   .'ISIMIL'
+  'REGION1'   .'UBSCSUG'
+  'REGION1'   .'XBSC'
+/;
+SET PRC_DAYNIT /
+  'REGION1'   .'EELCDEM'
+  'REGION1'   .'XISIELC'
+  'REGION1'   .'XISIELCEXP'
+/;
+SET TOTALS /
+  'TOTAL_PRC'                'TOTAL over Relevant Processes                     '
+/;
+SET TS_ANNUAL /
+  'REGION1'   .'ANNUAL'
+/;
+SET X /
+  '-'                        'Item None                                         '
+/;
+SET UNITS /
+  '2000$USm'
+  'bn-pass-km'
+  'bn-pass-km/a'
+  'bn-t-km'
+  'bn-t-km/a'
+  'Bv-km'
+  'GW'
+  'KT'
+  'KT/a'
+  'mt'
+  'mt/a'
+  'MW'
+  'PJ'
+  'PJ?'
+  'PJa'
+  'PJD'
+  't'
+  'TJ'
+  'TJ/a'
+  'unitDM?'
+  'uvol'
+  'uvol/a'
+  'uvol?'
+  'uwt'
+  'uwt/a'
+  'uwt?'
+/;
+SET UNITS_COM /
+  '2000$USm'
+  'bn-pass-km'
+  'bn-t-km'
+  'Bv-km'
+  'KT'
+  'mt'
+  'PJ'
+  'PJ?'
+  'PJD'
+  't'
+  'TJ'
+  'unitDM?'
+  'uvol'
+  'uvol?'
+  'uwt'
+  'uwt?'
+/;
+SET UNITS_ACT /
+  '2000$USm'
+  'bn-pass-km'
+  'bn-t-km'
+  'Bv-km'
+  'KT'
+  'mt'
+  'PJ'
+  'PJD'
+  't'
+  'TJ'
+  'uvol'
+  'uwt'
+/;
+SET UNITS_CAP /
+  'bn-pass-km/a'
+  'bn-t-km/a'
+  'GW'
+  'KT/a'
+  'mt/a'
+  'MW'
+  'PJa'
+  'TJ/a'
+  'uvol/a'
+  'uwt/a'
+/;
+SET UNITS_MONY /
+  '2000$USm'
+/;
+SET ACOM_UNIT /
+  'REGION1'.'BCL'.'PJ'
+  'REGION1'.'BCS'.'PJ'
+  'REGION1'.'BIB'.'PJ'
+  'REGION1'.'BIE'.'PJ'
+  'REGION1'.'BIG'.'PJ'
+  'REGION1'.'BIM'.'PJ'
+  'REGION1'.'BIW'.'PJ'
+  'REGION1'.'BSC'.'PJ'
+  'REGION1'.'CH4PWR'.'KT'
+  'REGION1'.'CO2PWR'.'KT'
+  'REGION1'.'ELC'.'PJ'
+  'REGION1'.'ELCC'.'PJ'
+  'REGION1'.'ELCDEM'.'PJ'
+  'REGION1'.'INDCOA'.'PJ'
+  'REGION1'.'ISIBFC'.'PJ'
+  'REGION1'.'ISIBIB'.'PJ'
+  'REGION1'.'ISIBIG'.'PJ'
+  'REGION1'.'ISIBML'.'PJ'
+  'REGION1'.'ISIELC'.'PJ'
+  'REGION1'.'ISIHET'.'PJ'
+  'REGION1'.'ISISUG'.'PJ'
+  'REGION1'.'N2OPWR'.'KT'
+  'REGION1'.'PWRCLE'.'PJ'
+  'REGION1'.'PWRGAS'.'PJ'
+  'REGION1'.'SUG'.'mt'
+  'REGION1'.'SUGDEM'.'mt'
+  'REGION1'.'TRABIE'.'PJ'
+  'REGION1'.'ZZZ'.'PJ'
+/;
+SET PRCTACTUNT /
+  'REGION1'.'EELCDEM'.'PJ'
+  'REGION1'.'ISICHPEX'.'PJ'
+  'REGION1'.'ISIMIL'.'mt'
+  'REGION1'.'ISISUGDEM'.'mt'
+  'REGION1'.'MNZZZ'.'PJ'
+  'REGION1'.'PEXSUG'.'mt'
+  'REGION1'.'UBSCSUG'.'PJ'
+  'REGION1'.'XBCL'.'PJ'
+  'REGION1'.'XBIW'.'PJ'
+  'REGION1'.'XBSC'.'mt'
+  'REGION1'.'XINDBIB'.'mt'
+  'REGION1'.'XINDBIM'.'mt'
+  'REGION1'.'XINDCOA'.'PJ'
+  'REGION1'.'XISIBIGEXP'.'PJ'
+  'REGION1'.'XISIELC'.'PJ'
+  'REGION1'.'XISIELCEXP'.'PJ'
+  'REGION1'.'XTRAOGS'.'PJ'
+  'REGION1'.'ZZBKNRG'.'PJ'
+/;
+SET DATAYEAR /
+  '2018'
+  '2019'
+  '2020'
+  '2021'
+  '2022'
+  '2023'
+  '2024'
+  '2025'
+  '2026'
+  '2027'
+  '2028'
+  '2029'
+  '2030'
+  '2031'
+  '2032'
+  '2033'
+  '2034'
+  '2035'
+  '2036'
+  '2037'
+  '2038'
+  '2039'
+  '2040'
+/;
+PARAMETER ACOM_GMAP /
+  'REGION1'                 .'ISIELC'                  .'ISICHPEX-G'                 1
+  'REGION1'                 .'ISIHET'                  .'ISICHPEX-G'                 1
+/;
+PARAMETER AG_YRFR /
+  'REGION1'                 .'ANNUAL'                     1
+/;
+PARAMETER APRCACTUNT /
+  'REGION1'                 .'EELCDEM'                 .'ELCDEM'                     1
+  'REGION1'                 .'ISICHPEX'                .'ISICHPEX-G'                 1
+  'REGION1'                 .'ISIMIL'                  .'BSC'                        1
+  'REGION1'                 .'ISISUGDEM'               .'SUGDEM'                     1
+  'REGION1'                 .'MNZZZ'                   .'ZZZ'                        1
+  'REGION1'                 .'PEXSUG'                  .'SUG'                        1
+  'REGION1'                 .'UBSCSUG'                 .'ISISUG'                     1
+  'REGION1'                 .'XBCL'                    .'BCL'                        1
+  'REGION1'                 .'XBIW'                    .'BIW'                        1
+  'REGION1'                 .'XBSC'                    .'BSC'                        1
+  'REGION1'                 .'XINDBIB'                 .'BIB'                        1
+  'REGION1'                 .'XINDBIM'                 .'BIM'                        1
+  'REGION1'                 .'XINDCOA'                 .'INDCOA'                     1
+  'REGION1'                 .'XISIBIGEXP'              .'BIG'                        1
+  'REGION1'                 .'XISIELC'                 .'ISIELC'                     1
+  'REGION1'                 .'XISIELCEXP'              .'ELCC'                       1
+  'REGION1'                 .'XTRAOGS'                 .'TRABIE'                     1
+  'REGION1'                 .'ZZBKNRG'                 .'ZZZ'                        1
+/;
+PARAMETER APRCCAPACT /
+  'REGION1'                 .'ISICHPEX'                   31.563
+  'REGION1'                 .'ISIMIL'                     1
+  'REGION1'                 .'PEXSUG'                     1
+  'REGION1'                 .'UBSCSUG'                    1
+  'REGION1'                 .'XBCL'                       1
+  'REGION1'                 .'XBIW'                       1
+  'REGION1'                 .'XBSC'                       1
+  'REGION1'                 .'XINDBIB'                    1
+  'REGION1'                 .'XINDBIM'                    1
+  'REGION1'                 .'XINDCOA'                    1
+  'REGION1'                 .'XISIBIGEXP'                 1
+  'REGION1'                 .'XISIELC'                    31.536
+  'REGION1'                 .'XISIELCEXP'                 31.536
+  'REGION1'                 .'XTRAOGS'                    1
+/;
+PARAMETER ATOP_IN /
+  'REGION1'                 .'EELCDEM'                 .'ELC'                        1
+  'REGION1'                 .'ISICHPEX'                .'BIW'                        1
+  'REGION1'                 .'ISICHPEX'                .'INDCOA'                     1
+  'REGION1'                 .'ISICHPEX'                .'ISIBIB'                     1
+  'REGION1'                 .'ISIMIL'                  .'BSC'                        1
+  'REGION1'                 .'ISIMIL'                  .'ISIELC'                     1
+  'REGION1'                 .'ISIMIL'                  .'ISIHET'                     1
+  'REGION1'                 .'ISISUGDEM'               .'ISISUG'                     1
+  'REGION1'                 .'PEXSUG'                  .'ISISUG'                     1
+  'REGION1'                 .'UBSCSUG'                 .'BCS'                        1
+  'REGION1'                 .'UBSCSUG'                 .'ISIELC'                     1
+  'REGION1'                 .'UBSCSUG'                 .'ISIHET'                     1
+  'REGION1'                 .'XINDBIB'                 .'ISIBIB'                     1
+  'REGION1'                 .'XINDBIM'                 .'ISIBML'                     1
+  'REGION1'                 .'XISIBIGEXP'              .'ISIBIG'                     1
+  'REGION1'                 .'XISIELCEXP'              .'ISIELC'                     1
+  'REGION1'                 .'XTRAOGS'                 .'BIE'                        1
+  'REGION1'                 .'ZZBKNRG'                 .'ZZZ'                        1
+/;
+PARAMETER ATOP_OUT /
+  'REGION1'                 .'EELCDEM'                 .'ELCDEM'                     1
+  'REGION1'                 .'ISICHPEX'                .'ISIELC'                     1
+  'REGION1'                 .'ISICHPEX'                .'ISIHET'                     1
+  'REGION1'                 .'ISIMIL'                  .'BCS'                        1
+  'REGION1'                 .'ISIMIL'                  .'ISIBIB'                     1
+  'REGION1'                 .'ISISUGDEM'               .'SUGDEM'                     1
+  'REGION1'                 .'MNZZZ'                   .'ZZZ'                        1
+  'REGION1'                 .'PEXSUG'                  .'SUG'                        1
+  'REGION1'                 .'UBSCSUG'                 .'ISIBFC'                     1
+  'REGION1'                 .'UBSCSUG'                 .'ISIBML'                     1
+  'REGION1'                 .'UBSCSUG'                 .'ISISUG'                     1
+  'REGION1'                 .'XBCL'                    .'BCL'                        1
+  'REGION1'                 .'XBIW'                    .'BIW'                        1
+  'REGION1'                 .'XBSC'                    .'BSC'                        1
+  'REGION1'                 .'XINDBIB'                 .'BIB'                        1
+  'REGION1'                 .'XINDBIM'                 .'BIM'                        1
+  'REGION1'                 .'XINDCOA'                 .'INDCOA'                     1
+  'REGION1'                 .'XISIBIGEXP'              .'BIG'                        1
+  'REGION1'                 .'XISIELC'                 .'ISIELC'                     1
+  'REGION1'                 .'XISIELCEXP'              .'ELCC'                       1
+  'REGION1'                 .'XTRAOGS'                 .'TRABIE'                     1
+  'REGION1'                 .'ZZBKNRG'                 .'BCL'                        1
+  'REGION1'                 .'ZZBKNRG'                 .'BCS'                        1
+  'REGION1'                 .'ZZBKNRG'                 .'BIB'                        1
+  'REGION1'                 .'ZZBKNRG'                 .'BIE'                        1
+  'REGION1'                 .'ZZBKNRG'                 .'BIW'                        1
+  'REGION1'                 .'ZZBKNRG'                 .'BSC'                        1
+  'REGION1'                 .'ZZBKNRG'                 .'ELC'                        1
+  'REGION1'                 .'ZZBKNRG'                 .'ELCC'                       1
+  'REGION1'                 .'ZZBKNRG'                 .'INDCOA'                     1
+  'REGION1'                 .'ZZBKNRG'                 .'ISIBIB'                     1
+  'REGION1'                 .'ZZBKNRG'                 .'ISIBIG'                     1
+  'REGION1'                 .'ZZBKNRG'                 .'ISIBML'                     1
+  'REGION1'                 .'ZZBKNRG'                 .'ISIELC'                     1
+  'REGION1'                 .'ZZBKNRG'                 .'ISIHET'                     1
+  'REGION1'                 .'ZZBKNRG'                 .'ISISUG'                     1
+  'REGION1'                 .'ZZBKNRG'                 .'PWRCLE'                     1
+  'REGION1'                 .'ZZBKNRG'                 .'PWRGAS'                     1
+  'REGION1'                 .'ZZBKNRG'                 .'SUG'                        1
+  'REGION1'                 .'ZZBKNRG'                 .'TRABIE'                     1
+/;
+       TABLE AACT_BND
+                                                                                                                0     2018            2019            2020            2021            2022            2023            2024            2025            2026            2027            2028            2029            2030            2031            2032            2033            2034            2035            2036            2037            2038            2039            2040            
+  'REGION1'                 .'PEXSUG'                  .'ANNUAL'                  .'UP'                               1.042831                                                                                                                                                                                                                                                                                                                                                        
+  'REGION1'                 .'XBCL'                    .'ANNUAL'                  .'UP'                         3     10.44032357903                                                                                                                                                                                                                                                                                                                                                  
+  'REGION1'                 .'XBIW'                    .'ANNUAL'                  .'UP'                         3     .9799150175955                                                                                                                                                                                                                                                                                                                                                  
+  'REGION1'                 .'XBSC'                    .'ANNUAL'                  .'UP'                         3     19.031677827                                                                                                                                                                                                                                                                                                                                                    
+  'REGION1'                 .'XINDBIB'                 .'ANNUAL'                  .'LO'                         3     .4412807195282                                                                                                                                                                                                                                                                                                                                                  
+  'REGION1'                 .'XINDCOA'                 .'ANNUAL'                  .'UP'                         3     5.38872783                                                                                                                                                                                                                                                                                                                                                      
+  'REGION1'                 .'XISIELC'                 .'ANNUAL'                  .'LO'                         3     .330587532                                                                                                                                                                                                                                                                                                                                                      
+  'REGION1'                 .'XISIELCEXP'              .'ANNUAL'                  .'UP'                               .4485512592                                                                                                                                                                                                                                                                                                                                                     
+;
+       TABLE AACT_COST
+                                                          0     2018            2019            2020            2021            2022            2023            2024            2025            2026            2027            2028            2029            2030            2031            2032            2033            2034            2035            2036            2037            2038            2039            2040            
+  'REGION1'                 .'MNZZZ'                            9999                                                                                                                                                                                                                                                                                                                                                            
+  'REGION1'                 .'PEXSUG'                          -4016.85                                                                                                                                                                                                                                                                                                                                                         
+  'REGION1'                 .'XBCL'                             59.21052631578                                                                                                                                                                                                                                                                                                                                                  
+  'REGION1'                 .'XBIW'                             47.18374876369                                                                                                                                                                                                                                                                                                                                                  
+  'REGION1'                 .'XBSC'                             451.5785305154                                                                                                                                                                                                                                                                                                                                                  
+  'REGION1'                 .'XINDBIB'                         EPS                                                                                                                                                                                                                                                                                                                                                              
+  'REGION1'                 .'XINDBIM'                         -889.5238095238                                                                                                                                                                                                                                                                                                                                                  
+  'REGION1'                 .'XINDCOA'                          55.38349797361                                                                                                                                                                                                                                                                                                                                                  
+  'REGION1'                 .'XISIBIGEXP'                      -158.88                                                                                                                                                                                                                                                                                                                                                          
+  'REGION1'                 .'XISIELC'                          418.9381642499                                                                                                                                                                                                                                                                                                                                                  
+  'REGION1'                 .'XISIELCEXP'                      -277.7778                                                                                                                                                                                                                                                                                                                                                        
+  'REGION1'                 .'XTRAOGS'                         -211.1608187134                                                                                                                                                                                                                                                                                                                                                  
+;
+       TABLE AACT_EFF
+                                                                                                                0     2018            2019            2020            2021            2022            2023            2024            2025            2026            2027            2028            2029            2030            2031            2032            2033            2034            2035            2036            2037            2038            2039            2040            
+  'REGION1'                 .'EELCDEM'                 .'ACTGRP'                  .'ANNUAL'                           1                                                                                                                                                                                                                                                                                                                                                               
+  'REGION1'                 .'ISICHPEX'                .'ACTGRP'                  .'ANNUAL'                           5.68893605E-02                                                                                                                                                                                                                                                                                                                                                  
+  'REGION1'                 .'ISISUGDEM'               .'ACTGRP'                  .'ANNUAL'                           6.05739013E-02                                                                                                                                                                                                                                                                                                                                                  
+  'REGION1'                 .'PEXSUG'                  .'ACTGRP'                  .'ANNUAL'                           .0606                                                                                                                                                                                                                                                                                                                                                           
+  'REGION1'                 .'XINDBIB'                 .'ACTGRP'                  .'ANNUAL'                           .1390066970646                                                                                                                                                                                                                                                                                                                                                  
+  'REGION1'                 .'XINDBIM'                 .'ACTGRP'                  .'ANNUAL'                           .1349839103269                                                                                                                                                                                                                                                                                                                                                  
+  'REGION1'                 .'XISIBIGEXP'              .'ACTGRP'                  .'ANNUAL'                           1                                                                                                                                                                                                                                                                                                                                                               
+  'REGION1'                 .'XISIELC'                 .'ACTGRP'                  .'ANNUAL'                           1                                                                                                                                                                                                                                                                                                                                                               
+  'REGION1'                 .'XISIELCEXP'              .'ACTGRP'                  .'ANNUAL'                           1                                                                                                                                                                                                                                                                                                                                                               
+  'REGION1'                 .'XTRAOGS'                 .'ACTGRP'                  .'ANNUAL'                           1                                                                                                                                                                                                                                                                                                                                                               
+  'REGION1'                 .'ZZBKNRG'                 .'ACTGRP'                  .'ANNUAL'                           1                                                                                                                                                                                                                                                                                                                                                               
+;
+       TABLE ACAP_BND
+                                                                                     0     2018            2019            2020            2021            2022            2023            2024            2025            2026            2027            2028            2029            2030            2031            2032            2033            2034            2035            2036            2037            2038            2039            2040            
+  'REGION1'                 .'ISICHPEX'                .'UP'                         3     .237111875                                                                                                                                                                                                                                                                                                                                                      
+;
+       TABLE ACOM_PROJ
+                                                          0     2018            2019            2020            2021            2022            2023            2024            2025            2026            2027            2028            2029            2030            2031            2032            2033            2034            2035            2036            2037            2038            2039            2040            
+  'REGION1'                 .'ELCDEM'                          EPS                                                                                                                                                                                                                                                                                                                                                              
+  'REGION1'                 .'SUGDEM'                           1.14099                                                                                                                                                                                                                                                                                                                                                         
+;
+       TABLE AG_DRATE
+                               0     2018            2019            2020            2021            2022            2023            2024            2025            2026            2027            2028            2029            2030            2031            2032            2033            2034            2035            2036            2037            2038            2039            2040            
+  'REGION1'                          .1                                                                                                                                                                                                                                                                                                                                                              
+;
+       TABLE ANCAP_AFS
+                                                                                                                0     2018            2019            2020            2021            2022            2023            2024            2025            2026            2027            2028            2029            2030            2031            2032            2033            2034            2035            2036            2037            2038            2039            2040            
+  'REGION1'                 .'ISICHPEX'                .'ANNUAL'                  .'UP'                               .3411796797628                                                                                                                                                                                                                                                                                                                                                  
+;
+       TABLE ANCAP_CEH
+                                                          0     2018            2019            2020            2021            2022            2023            2024            2025            2026            2027            2028            2029            2030            2031            2032            2033            2034            2035            2036            2037            2038            2039            2040            
+  'REGION1'                 .'ISICHPEX'                        EPS                                                                                                                                                                                                                                                                                                                                                              
+;
+       TABLE ANCAP_CHPR
+                                                                                     0     2018            2019            2020            2021            2022            2023            2024            2025            2026            2027            2028            2029            2030            2031            2032            2033            2034            2035            2036            2037            2038            2039            2040            
+  'REGION1'                 .'ISICHPEX'                .'FX'                         3     12.91246851385                                                                                                                                                                                                                                                                                                                                                  
+;
+       TABLE ANCAP_FOM
+                                                          0     2018            2019            2020            2021            2022            2023            2024            2025            2026            2027            2028            2029            2030            2031            2032            2033            2034            2035            2036            2037            2038            2039            2040            
+  'REGION1'                 .'ISICHPEX'                         3605.075289708                                                                                                                                                                                                                                                                                                                                                  
+  'REGION1'                 .'ISIMIL'                           103.7520287224                                                                                                                                                                                                                                                                                                                                                  
+  'REGION1'                 .'UBSCSUG'                          4.632746161262                                                                                                                                                                                                                                                                                                                                                  
+;
+       TABLE APRC_RESID
+                                                          0     2018            2019            2020            2021            2022            2023            2024            2025            2026            2027            2028            2029            2030            2031            2032            2033            2034            2035            2036            2037            2038            2039            2040            
+  'REGION1'                 .'ISICHPEX'                         .236875                                                                                         .236875        EPS                                                                                                                                                                                                                                             EPS
+  'REGION1'                 .'ISIMIL'                           25.755                                                                                          25.755          25.755                                                                                                                                                                                                                                          25.755
+  'REGION1'                 .'UBSCSUG'                          49.72438512                                                                                     49.72438512     49.72438512                                                                                                                                                                                                                                     49.72438512
+;
+       TABLE APRCACTFLO
+                                                                                     0     2018            2019            2020            2021            2022            2023            2024            2025            2026            2027            2028            2029            2030            2031            2032            2033            2034            2035            2036            2037            2038            2039            2040            
+  'REGION1'                 .'ISIMIL'                  .'BCS'                              2.480435118251                                                                                                                                                                                                                                                                                                                                                  
+  'REGION1'                 .'ISIMIL'                  .'ISIBIB'                           2.186138200892                                                                                                                                                                                                                                                                                                                                                  
+  'REGION1'                 .'ISIMIL'                  .'ISIELC'                           .1109213801800                                                                                                                                                                                                                                                                                                                                                  
+  'REGION1'                 .'ISIMIL'                  .'ISIHET'                           1.490552175311                                                                                                                                                                                                                                                                                                                                                  
+  'REGION1'                 .'UBSCSUG'                 .'BCS'                              1.309403377775                                                                                                                                                                                                                                                                                                                                                  
+  'REGION1'                 .'UBSCSUG'                 .'ISIBFC'                           .0181975027733                                                                                                                                                                                                                                                                                                                                                  
+  'REGION1'                 .'UBSCSUG'                 .'ISIBML'                           .1759782350018                                                                                                                                                                                                                                                                                                                                                  
+  'REGION1'                 .'UBSCSUG'                 .'ISIELC'                           8.86657183E-03                                                                                                                                                                                                                                                                                                                                                  
+  'REGION1'                 .'UBSCSUG'                 .'ISIHET'                           .1259719385029                                                                                                                                                                                                                                                                                                                                                  
+;

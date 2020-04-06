@@ -1,0 +1,224 @@
+SCENARIO	_GLOBAL,REGION1
+Creation Date:	2020/04/06	2:37:28 PM
+Created By:	Export from database C:\Models\SugarModel\Sugar_Model_v10_GitExperiments.mdb
+ANSWER Version:	6.9.22
+Scenario:	BASE	Sugar_Model	
+Time Periods:	0	2018	2019	2020	2021	2022	2023	2024	2025	2026	2027	2028	2029	2030	2031	2032	2033	2034	2035	2036	2037	2038	2039	2040
+
+REGIONS	_GLOBAL,REGION1
+_GLOBAL	Special region for data parameters with no REG arg	ALL_REG	
+REGION1	Initial internal region	ALL_REG,REG	
+
+ITEMS	_GLOBAL
+	W	ANNUAL	Annual		ALL_TS,ANNUAL	
+
+TS DATA	_GLOBAL
+
+TID DATA	_GLOBAL
+	G_DYEAR	-	_	-	-	-	-	2018	
+
+ITEMS	REGION1
+	D	ISICHPEX-G	PCG for ISICHPEX (Existing CHP Plant)		COM_GRP,COM_GRPTRU	
+	E	BCL	Recoverable leaves	PJ	COM,NRG,SEASON,LIMRENEW	
+	E	BCS	Cane Syrup (A-Mollasses)	PJ	COM,NRG,SEASON,LIMRENEW	
+	E	BIB	Bagasse Sales to Other sectors	PJ	COM,NRG,ANNUAL,LIMRENEW	
+	E	BIE	Ethanol	PJ	COM,NRG,ANNUAL,LIMRENEW	
+	E	BIG	Biogas Sold to Market	PJ	COM,NRG,ANNUAL,LIMRENEW	
+	E	BIM	C-Molasses sold to market	PJ	COM,NRG,ANNUAL,LIMRENEW	
+	E	BIW	Biomass Woodchips	PJ	COM,NRG,SEASON,LIMRENEW	
+	E	BSC	Cane-into factory	PJ	COM,NRG,SEASON,LIMRENEW	
+	E	CH4PWR	Methane - Power Sector	KT	COM,ENV,ANNUAL,GHG	
+	E	CO2PWR	Carbon dioxide - Power Sector	KT	COM,ENV,ANNUAL,GHG	
+	E	ELC	Electricity	PJ	COM,NRG,DAYNITE,ELC	
+	E	ELCC	Electricity Bulk	PJ	COM,NRG,DAYNITE,ELC	
+	E	ELCDEM	Electricity Demand	PJ	COM,DEM,DAYNITE,OTH	
+	E	INDCOA	Industry Coal	PJ	COM,NRG,ANNUAL,FOSSIL	
+	E	ISIBFC	Filter Cake	PJ	COM,NRG,ANNUAL,LIMRENEW	
+	E	ISIBIB	Bagasse	PJ	COM,NRG,SEASON,LIMRENEW	
+	E	ISIBIG	Sugar Industry Biogas	PJ	COM,NRG,SEASON,LIMRENEW	
+	E	ISIBML	C-Molasses	PJ	COM,NRG,ANNUAL,LIMRENEW	
+	E	ISIELC	Sugar Industry Electricity	PJ	COM,NRG,DAYNITE,ELC	
+	E	ISIHET	Steam From CHP	PJ	COM,NRG,SEASON,LTHEAT	
+	E	ISISUG	Sugar	PJ	COM,NRG,ANNUAL,LIMRENEW	
+	E	N2OPWR	Nitrous Oxide - Power Sector	KT	COM,ENV,ANNUAL,GHG	
+	E	PWRCLE	Eskom Coal	PJ	COM,NRG,ANNUAL,FOSSIL	
+	E	PWRGAS	Natural Gas	PJ	COM,NRG,ANNUAL,FOSSIL	
+	E	SUG	Sugar Exports	mt	COM,NRG,ANNUAL,LIMRENEW	
+	E	SUGDEM	Sugar Demand Domestic Market	mt	COM,DEM,ANNUAL,OTH	
+	E	TRABIE	Ethanol to market	PJ	COM,NRG,ANNUAL,LIMRENEW	
+	E	ZZZ	Dummy Backstop Commodity	PJ	COM,NRG,ANNUAL,FOSSIL	
+	T	EELCDEM	Electricity Demand	PJ,GW	PRC,DMD,DAYNITE	
+	T	ISICHPEX	Existing CHP Plant	PJ,GW	PRC,CHP,SEASON	
+	T	ISIMIL	Existing Milling Plant	mt,mt/a	PRC,PRE,SEASON	
+	T	ISISUGDEM	Sugar to Local Market	mt,mt/a	PRC,DMD,ANNUAL	
+	T	MNZZZ	Backstop for whole system	PJ,PJa	PRC,XTRACT,PRE,ANNUAL	
+	T	PEXSUG	Sugar to Export Market	mt,mt/a	PRC,PRE,ANNUAL	
+	T	UBSCSUG	B and C Stages	PJ,PJa	PRC,PRE,SEASON	
+	T	XBCL	Recoverable Leaves Supply	PJ,PJa	PRC,XTRACT,PRE,ANNUAL	
+	T	XBIW	Biomass Woodchip Supply	PJ,PJa	PRC,XTRACT,PRE,ANNUAL	
+	T	XBSC	Cane_Into Factory Supply	mt,mt/a	PRC,XTRACT,PRE,SEASON	
+	T	XINDBIB	Bagasse to Local Market	mt,mt/a	PRC,PRE,ANNUAL	
+	T	XINDBIM	Molasses to Local Market	mt,mt/a	PRC,PRE,ANNUAL	
+	T	XINDCOA	Industry Coal Supply	PJ,PJa	PRC,XTRACT,PRE,ANNUAL	
+	T	XISIBIGEXP	Biomethane to Local Market	PJ,PJa	PRC,PRE,ANNUAL	
+	T	XISIELC	Electricity from Eskom	PJ,GW	PRC,XTRACT,PRE,DAYNITE	
+	T	XISIELCEXP	Export to Grid from Sugar	PJ,GW	PRC,PRE,DAYNITE	
+	T	XTRAOGS	Ethanol to Local Market	PJ,PJa	PRC,PRE,ANNUAL	
+	T	ZZBKNRG	Backstop for all commodities	PJ,PJa	PRC,PRE,ANNUAL	
+	W	ANNUAL	Annual		ALL_TS,ANNUAL	
+	X	-	Item None		X	
+
+TS DATA	REGION1
+	ACT_BND	PEXSUG	-	-	-	ANNUAL	UP	0	1.042831	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_BND	XBCL	-	-	-	ANNUAL	UP	3	10.4403235790332	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_BND	XBIW	-	-	-	ANNUAL	UP	3	0.9799150175955	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_BND	XBSC	-	-	-	ANNUAL	UP	3	19.031677827	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_BND	XINDBIB	-	-	-	ANNUAL	LO	3	0.441280719528286	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_BND	XINDCOA	-	-	-	ANNUAL	UP	3	5.38872783	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_BND	XISIELC	-	-	-	ANNUAL	LO	3	0.330587532	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_BND	XISIELCEXP	-	-	-	ANNUAL	UP	0	0.4485512592	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_COST	MNZZZ	-	-	-	-	-	0	9999	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_COST	PEXSUG	-	-	-	-	-	0	-4016.85	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_COST	XBCL	-	-	-	-	-	0	59.2105263157895	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_COST	XBIW	-	-	-	-	-	0	47.1837487636972	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_COST	XBSC	-	-	-	-	-	0	451.578530515443	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_COST	XINDBIB	-	-	-	-	-	0	0	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_COST	XINDBIM	-	-	-	-	-	0	-889.52380952381	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_COST	XINDCOA	-	-	-	-	-	0	55.3834979736103	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_COST	XISIBIGEXP	-	-	-	-	-	0	-158.88	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_COST	XISIELC	-	-	-	-	-	0	418.938164249945	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_COST	XISIELCEXP	-	-	-	-	-	0	-277.7778	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_COST	XTRAOGS	-	-	-	-	-	0	-211.16081871345	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_EFF	EELCDEM	-	ACTGRP	-	ANNUAL	-	0	1	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_EFF	ISICHPEX	-	ACTGRP	-	ANNUAL	-	0	5.68893605537748E-02	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_EFF	ISISUGDEM	-	ACTGRP	-	ANNUAL	-	0	6.05739013711508E-02	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_EFF	PEXSUG	-	ACTGRP	-	ANNUAL	-	0	0.0606	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_EFF	XINDBIB	-	ACTGRP	-	ANNUAL	-	0	0.139006697064651	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_EFF	XINDBIM	-	ACTGRP	-	ANNUAL	-	0	0.134983910326927	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_EFF	XISIBIGEXP	-	ACTGRP	-	ANNUAL	-	0	1	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_EFF	XISIELC	-	ACTGRP	-	ANNUAL	-	0	1	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_EFF	XISIELCEXP	-	ACTGRP	-	ANNUAL	-	0	1	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_EFF	XTRAOGS	-	ACTGRP	-	ANNUAL	-	0	1	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_EFF	ZZBKNRG	-	ACTGRP	-	ANNUAL	-	0	1	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	CAP_BND	ISICHPEX	-	-	-	-	UP	3	0.237111875	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	COM_PROJ	-	ELCDEM	-	-	-	-	0	0	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	COM_PROJ	-	SUGDEM	-	-	-	-	0	1.14099	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	G_DRATE	-	_	-	-	-	-	0	0.1	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	NCAP_AFS	ISICHPEX	-	-	-	ANNUAL	UP	0	0.341179679762894	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	NCAP_CEH	ISICHPEX	-	-	-	-	-	0	0	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	NCAP_CHPR	ISICHPEX	-	-	-	-	FX	3	12.912468513852	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	NCAP_FOM	ISICHPEX	-	-	-	-	-	0	3605.0752897085	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	NCAP_FOM	ISIMIL	-	-	-	-	-	0	103.752028722493	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	NCAP_FOM	UBSCSUG	-	-	-	-	-	0	4.63274616126254	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	PRC_ACTFLO	ISIMIL	-	BCS	-	-	-	0	2.4804351182519	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	PRC_ACTFLO	ISIMIL	-	ISIBIB	-	-	-	0	2.18613820089232	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	PRC_ACTFLO	ISIMIL	-	ISIELC	-	-	-	0	0.110921380180079	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	PRC_ACTFLO	ISIMIL	-	ISIHET	-	-	-	0	1.49055217531149	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	PRC_ACTFLO	UBSCSUG	-	BCS	-	-	-	0	1.30940337777503	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	PRC_ACTFLO	UBSCSUG	-	ISIBFC	-	-	-	0	0.018197502773331	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	PRC_ACTFLO	UBSCSUG	-	ISIBML	-	-	-	0	0.175978235001854	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	PRC_ACTFLO	UBSCSUG	-	ISIELC	-	-	-	0	8.86657183305419E-03	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	PRC_ACTFLO	UBSCSUG	-	ISIHET	-	-	-	0	0.12597193850295	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	PRC_RESID	ISICHPEX	-	-	-	-	-	0	0.236875	null	null	null	null	null	0.236875	0	null	null	null	null	null	null	null	null	null	null	null	null	null	null	0	
+	PRC_RESID	ISIMIL	-	-	-	-	-	0	25.755	null	null	null	null	null	25.755	25.755	null	null	null	null	null	null	null	null	null	null	null	null	null	null	25.755	
+	PRC_RESID	UBSCSUG	-	-	-	-	-	0	49.72438512	null	null	null	null	null	49.72438512	49.72438512	null	null	null	null	null	null	null	null	null	null	null	null	null	null	49.72438512	
+
+TID DATA	REGION1
+	COM_GMAP	-	ISIELC	ISICHPEX-G	-	-	-	1	
+	COM_GMAP	-	ISIHET	ISICHPEX-G	-	-	-	1	
+	G_YRFR	-	_	-	-	ANNUAL	-	1	
+	PRC_ACTUNT	EELCDEM	-	ELCDEM	-	-	-	1	
+	PRC_ACTUNT	ISICHPEX	-	ISICHPEX-G	-	-	-	1	
+	PRC_ACTUNT	ISIMIL	-	BSC	-	-	-	1	
+	PRC_ACTUNT	ISISUGDEM	-	SUGDEM	-	-	-	1	
+	PRC_ACTUNT	MNZZZ	-	ZZZ	-	-	-	1	
+	PRC_ACTUNT	PEXSUG	-	SUG	-	-	-	1	
+	PRC_ACTUNT	UBSCSUG	-	ISISUG	-	-	-	1	
+	PRC_ACTUNT	XBCL	-	BCL	-	-	-	1	
+	PRC_ACTUNT	XBIW	-	BIW	-	-	-	1	
+	PRC_ACTUNT	XBSC	-	BSC	-	-	-	1	
+	PRC_ACTUNT	XINDBIB	-	BIB	-	-	-	1	
+	PRC_ACTUNT	XINDBIM	-	BIM	-	-	-	1	
+	PRC_ACTUNT	XINDCOA	-	INDCOA	-	-	-	1	
+	PRC_ACTUNT	XISIBIGEXP	-	BIG	-	-	-	1	
+	PRC_ACTUNT	XISIELC	-	ISIELC	-	-	-	1	
+	PRC_ACTUNT	XISIELCEXP	-	ELCC	-	-	-	1	
+	PRC_ACTUNT	XTRAOGS	-	TRABIE	-	-	-	1	
+	PRC_ACTUNT	ZZBKNRG	-	ZZZ	-	-	-	1	
+	PRC_CAPACT	ISICHPEX	-	-	-	-	-	31.563	
+	PRC_CAPACT	ISIMIL	-	-	-	-	-	1	
+	PRC_CAPACT	PEXSUG	-	-	-	-	-	1	
+	PRC_CAPACT	UBSCSUG	-	-	-	-	-	1	
+	PRC_CAPACT	XBCL	-	-	-	-	-	1	
+	PRC_CAPACT	XBIW	-	-	-	-	-	1	
+	PRC_CAPACT	XBSC	-	-	-	-	-	1	
+	PRC_CAPACT	XINDBIB	-	-	-	-	-	1	
+	PRC_CAPACT	XINDBIM	-	-	-	-	-	1	
+	PRC_CAPACT	XINDCOA	-	-	-	-	-	1	
+	PRC_CAPACT	XISIBIGEXP	-	-	-	-	-	1	
+	PRC_CAPACT	XISIELC	-	-	-	-	-	31.536	
+	PRC_CAPACT	XISIELCEXP	-	-	-	-	-	31.536	
+	PRC_CAPACT	XTRAOGS	-	-	-	-	-	1	
+	TOP-IN	EELCDEM	ELC	-	-	-	-	1	
+	TOP-IN	ISICHPEX	BIW	-	-	-	-	1	
+	TOP-IN	ISICHPEX	INDCOA	-	-	-	-	1	
+	TOP-IN	ISICHPEX	ISIBIB	-	-	-	-	1	
+	TOP-IN	ISIMIL	BSC	-	-	-	-	1	
+	TOP-IN	ISIMIL	ISIELC	-	-	-	-	1	
+	TOP-IN	ISIMIL	ISIHET	-	-	-	-	1	
+	TOP-IN	ISISUGDEM	ISISUG	-	-	-	-	1	
+	TOP-IN	PEXSUG	ISISUG	-	-	-	-	1	
+	TOP-IN	UBSCSUG	BCS	-	-	-	-	1	
+	TOP-IN	UBSCSUG	ISIELC	-	-	-	-	1	
+	TOP-IN	UBSCSUG	ISIHET	-	-	-	-	1	
+	TOP-IN	XINDBIB	ISIBIB	-	-	-	-	1	
+	TOP-IN	XINDBIM	ISIBML	-	-	-	-	1	
+	TOP-IN	XISIBIGEXP	ISIBIG	-	-	-	-	1	
+	TOP-IN	XISIELCEXP	ISIELC	-	-	-	-	1	
+	TOP-IN	XTRAOGS	BIE	-	-	-	-	1	
+	TOP-IN	ZZBKNRG	ZZZ	-	-	-	-	1	
+	TOP-OUT	EELCDEM	ELCDEM	-	-	-	-	1	
+	TOP-OUT	ISICHPEX	ISIELC	-	-	-	-	1	
+	TOP-OUT	ISICHPEX	ISIHET	-	-	-	-	1	
+	TOP-OUT	ISIMIL	BCS	-	-	-	-	1	
+	TOP-OUT	ISIMIL	ISIBIB	-	-	-	-	1	
+	TOP-OUT	ISISUGDEM	SUGDEM	-	-	-	-	1	
+	TOP-OUT	MNZZZ	ZZZ	-	-	-	-	1	
+	TOP-OUT	PEXSUG	SUG	-	-	-	-	1	
+	TOP-OUT	UBSCSUG	ISIBFC	-	-	-	-	1	
+	TOP-OUT	UBSCSUG	ISIBML	-	-	-	-	1	
+	TOP-OUT	UBSCSUG	ISISUG	-	-	-	-	1	
+	TOP-OUT	XBCL	BCL	-	-	-	-	1	
+	TOP-OUT	XBIW	BIW	-	-	-	-	1	
+	TOP-OUT	XBSC	BSC	-	-	-	-	1	
+	TOP-OUT	XINDBIB	BIB	-	-	-	-	1	
+	TOP-OUT	XINDBIM	BIM	-	-	-	-	1	
+	TOP-OUT	XINDCOA	INDCOA	-	-	-	-	1	
+	TOP-OUT	XISIBIGEXP	BIG	-	-	-	-	1	
+	TOP-OUT	XISIELC	ISIELC	-	-	-	-	1	
+	TOP-OUT	XISIELCEXP	ELCC	-	-	-	-	1	
+	TOP-OUT	XTRAOGS	TRABIE	-	-	-	-	1	
+	TOP-OUT	ZZBKNRG	BCL	-	-	-	-	1	
+	TOP-OUT	ZZBKNRG	BCS	-	-	-	-	1	
+	TOP-OUT	ZZBKNRG	BIB	-	-	-	-	1	
+	TOP-OUT	ZZBKNRG	BIE	-	-	-	-	1	
+	TOP-OUT	ZZBKNRG	BIW	-	-	-	-	1	
+	TOP-OUT	ZZBKNRG	BSC	-	-	-	-	1	
+	TOP-OUT	ZZBKNRG	ELC	-	-	-	-	1	
+	TOP-OUT	ZZBKNRG	ELCC	-	-	-	-	1	
+	TOP-OUT	ZZBKNRG	INDCOA	-	-	-	-	1	
+	TOP-OUT	ZZBKNRG	ISIBIB	-	-	-	-	1	
+	TOP-OUT	ZZBKNRG	ISIBIG	-	-	-	-	1	
+	TOP-OUT	ZZBKNRG	ISIBML	-	-	-	-	1	
+	TOP-OUT	ZZBKNRG	ISIELC	-	-	-	-	1	
+	TOP-OUT	ZZBKNRG	ISIHET	-	-	-	-	1	
+	TOP-OUT	ZZBKNRG	ISISUG	-	-	-	-	1	
+	TOP-OUT	ZZBKNRG	PWRCLE	-	-	-	-	1	
+	TOP-OUT	ZZBKNRG	PWRGAS	-	-	-	-	1	
+	TOP-OUT	ZZBKNRG	SUG	-	-	-	-	1	
+	TOP-OUT	ZZBKNRG	TRABIE	-	-	-	-	1	
+
+TS TRADE	_GLOBAL,REGION1
+
+TID TRADE	_GLOBAL,REGION1
+

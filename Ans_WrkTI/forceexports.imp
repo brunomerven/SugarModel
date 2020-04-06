@@ -1,0 +1,28 @@
+SCENARIO	_GLOBAL,REGION1
+Creation Date:	2020/04/06	2:38:15 PM
+Created By:	Export from database C:\Models\SugarModel\Sugar_Model_v10_GitExperiments.mdb
+ANSWER Version:	6.9.22
+Scenario:	FORCEEXPORTS	force exports	
+Time Periods:	0	2018	2019	2020	2021	2022	2023	2024	2025	2026	2027	2028	2029	2030	2031	2032	2033	2034	2035	2036	2037	2038	2039	2040
+
+REGIONS	_GLOBAL,REGION1
+_GLOBAL	Special region for data parameters with no REG arg	ALL_REG	
+REGION1	Initial internal region	ALL_REG,REG	
+
+ITEMS	_GLOBAL
+
+TS DATA	_GLOBAL
+
+TID DATA	_GLOBAL
+
+ITEMS	REGION1
+
+TS DATA	REGION1
+	ACT_BND	PEXSUG	-	-	-	ANNUAL	LO	3	1.0427	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+
+TID DATA	REGION1
+
+TS TRADE	_GLOBAL,REGION1
+
+TID TRADE	_GLOBAL,REGION1
+

@@ -1,0 +1,80 @@
+*==============================================================================*
+* PP_ACTEF.MOD : Make the necessary preparations for EQE_ACTEFF equations
+*  - Aggregate / inherit ACT_EFF parameters
+*==============================================================================*
+$IF NOT '%1' == LVL $GOTO EQUA
+*-----------------------------------------------------------------------------
+SCALAR MICRO / 1E-6 /;
+*-----------------------------------------------------------------------------
+OPTION CLEAR = UNCD7, CLEAR=RXX;
+*-----------------------------------------------------------------------------
+* Save commodity ACT_EFF partitions
+ KEEP_FLOP(R,P,C)$RPG_1ACE(R,P,C,C) = YES;
+ CG_GRP(RPC_ACE(RPC(R,P,C)),C) = YES;
+ OPTION CLEAR=RPG_1ACE,CLEAR=RPC_ACE;
+* Catch singleton groups
+ LOOP(RPG_ACE(RP_PGACT(R,P),CG,IO)$(SUM(TOP(R,P,C,IO)$COM_GMAP(R,CG,C),1) LE 1),
+  IF(NOT RPG_PACE(R,P,CG)+RP_PL(R,P,'FX'),RP_GRP(R,P,CG)=YES; RPG_1ACE(RP_GRP(R,P,CG),C)$(TOP(R,P,C,IO)$COM_GMAP(R,CG,C)) = YES));
+ RPG_ACE(RP_GRP(R,P,CG),IO) = NO;
+ LOOP(RPG_ACE(R,P,CG,IO),RPC_ACE(R,P,C)$(TOP(R,P,C,IO)$COM_GMAP(R,CG,C)) = YES);
+ RPC_ACE(KEEP_FLOP) = NO;
+* Store all flow level commodities in CG_GRP
+ CG_GRP(RPG_1ACE) = YES;
+ OPTION CLEAR=RXX;
+* Accept EPS for shadow group flows only
+ ACT_EFF(RTP(R,V,P),C,S)$((NOT RPC_ACE(R,P,C))$(ACT_EFF(RTP,C,S) EQ 0)$ACT_EFF(R,V,P,C,S)) = 0;
+*-----------------------------------------------------------------------------
+* Inherit values to target timeslices when possible
+LOOP(CG_GRP(R,P,CG,C)$SUM((V,RS_BELOW(R,ANNUAL,S))$ACT_EFF(R,V,P,CG,S),1),RXX(R,P,CG) = YES);
+UNCD7('1',CG_GRP(RXX(R,P,CG),C),'0','') = YES; CG_GRP(RXX(R,P,CG),C) = NO;
+LOOP(RPG_ACE(R,P,CG,IO)$SUM((V,RS_BELOW(R,ANNUAL,S))$ACT_EFF(R,V,P,CG,S),1),UNCD7('2',R,P,CG,%PGPRIM%,'0','') = YES);
+*-----------------------------------------------------------------------------
+* Aggregate values to target timeslices when inheritance could not be done
+LOOP(UNCD7(J,R,P,CG,C,LL,ITEM),
+  IF(SAMEAS(J,'1'),MY_TS(S) = RPCS_VAR(R,P,C,S); ELSE MY_TS(S) = PRC_TS(R,P,S));
+  LOOP(RTP(R,V,P), TS_ARRAY(S) = ACT_EFF(R,V,P,CG,S);
+    ACT_EFF(R,V,P,CG,MY_TS)$(NOT TS_ARRAY(MY_TS)) =
+      SUM(RS_TREE(FINEST(R,S),MY_TS), G_YRFR(R,S) * (TS_ARRAY(S) +
+           SUM(RS_BELOW(R,ALL_TS,S)$((NOT SUM(TS_MAP(R,SL,S)$RS_BELOW(R,ALL_TS,SL),TS_ARRAY(SL)))$TS_ARRAY(ALL_TS)),
+               TS_ARRAY(ALL_TS))))/G_YRFR(R,MY_TS)));
+*-----------------------------------------------------------------------------
+FSCKS(CG_GRP(R,P,CG,C),CG,S)$RPCS_VAR(R,P,C,S) = YES; OPTION FFCKS <= FSCKS;
+ACT_EFF(RTP(R,V,P),CG,TS)$(NOT ACT_EFF(R,V,P,CG,TS)) $= SUM(FFCKS(R,P,CG,CG,TS),ACT_EFF(R,V,P,CG,'ANNUAL'));
+ACT_EFF(RTP(R,V,P),CG,TS)$(NOT ACT_EFF(R,V,P,CG,TS)) $= SUM(RPG_ACE(R,P,CG,IO),ACT_EFF(R,V,P,CG,'ANNUAL'))$PRC_TS(R,P,TS);
+*-----------------------------------------------------------------------------
+OPTION CLEAR=FFCKS,CLEAR=FSCKS,CLEAR=CG_GRP;
+$EXIT
+$LABEL EQUA
+$SET SHP1 "" SET SHG ",P,CG,%PGPRIM%"
+$IF DEFINED RTP_FFCS $SET SHP1 "*(%SHFF%S(R,V%SHG%%SOW%))"
+$SET SHP1 "*(%SHFF%X(R,V,T%SHG%)$PRC_VINT(R,P))%SHP1%"
+*=============================================================================
+
+%EQ%E_ACTEFF(RTP_VINTYR(%R_V_T%,P),CG,IO,S %SWT%)$(RPS_S1(R,P,S)$RPG_ACE(R,P,CG,IO)) ..
+
+* Sum over input flows
+  SUM(RPC_ACE(R,P,C)$COM_GMAP(R,CG,C),
+   SUM(RTPCS_VARF(R,T,P,C,TS)$RS_FR(R,S,TS),
+    (1+(ACT_EFF(R,V,P,C,TS)-1)$ACT_EFF(R,V,P,C,TS)) * %VAR%_FLO(R,V,T,P,C,TS %SOW%) *
+    (1 + (RS_FR(R,S,TS)*(1+RTCS_FR(R,T,C,S,TS))-1)$RS_BELOW(R,TS,S))))
+
+   =E=
+
+  SUM(PRC_TS(R,P,TS)$RS_FR(R,S,TS),RS_FR(R,S,TS) *
+* COM_FR needs to be taken into account if process operates above S
+    (%VAR%_ACT(R,V,T,P,TS %SOW%)$(NOT RP_PGFLO(R,P)) +
+     SUM(RPC_PG(R,P,C),(%VAR%_ACT(R,V,T,P,TS %SOW%)$RP_PGACT(R,P)+(%VAR%_FLO(R,V,T,P,C,TS %SOW%)/PRC_ACTFLO(R,V,P,C))$(NOT RP_PGACT(R,P))) *
+       (1+RTCS_FR(R,T,C,S,TS)))$RP_PGFLO(R,P)) /
+    MAX(MICRO,ACT_EFF(R,V,P,CG,TS) %SHP1%))$(NOT RPG_PACE(R,P,CG)) +
+
+* Handle the special cases where ACT_EFF has been specified for PG commodities
+  SUM(PRC_TS(R,P,TS)$RS_FR(R,S,TS), RS_FR(R,S,TS) *
+    SUM(RPC_PG(R,P,C), (%VAR%_ACT(R,V,T,P,TS %SOW%)$RP_PGACT(R,P) +
+         (%VAR%_FLO(R,V,T,P,C,TS %SOW%)/PRC_ACTFLO(R,V,P,C))$(NOT RP_PGACT(R,P))) /
+        (1+(ACT_EFF(R,V,P,C,TS)-1)$ACT_EFF(R,V,P,C,TS)) * (1+RTCS_FR(R,T,C,S,TS))) /
+    (POWER(ACT_EFF(R,V,P,CG,TS),1-SUM(RC(R,C(CG)),1)) %SHP1%))$RPG_PACE(R,P,CG) +
+
+* Partial loads
+  SUM(RP_PL(R,P,L('FX')),ACT_LOSPL(R,V,P,L) *
+    SUM(PRC_TS(R,P,TS)$RS_FR(R,S,TS),%VAR%_UPS(R,V,T,P,TS,L%SOW%)*RS_FR(R,S,TS)/MAX(MICRO,ACT_EFF(R,V,P,CG,TS)%SHP1%)))
+;

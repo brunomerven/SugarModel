@@ -1,0 +1,65 @@
+SCENARIO	_GLOBAL,REGION1
+Creation Date:	2020/04/06	2:37:39 PM
+Created By:	Export from database C:\Models\SugarModel\Sugar_Model_v10_GitExperiments.mdb
+ANSWER Version:	6.9.22
+Scenario:	BIOGAS	Biogas and biomethane options	
+Time Periods:	0	2018	2019	2020	2021	2022	2023	2024	2025	2026	2027	2028	2029	2030	2031	2032	2033	2034	2035	2036	2037	2038	2039	2040
+
+REGIONS	_GLOBAL,REGION1
+_GLOBAL	Special region for data parameters with no REG arg	ALL_REG	
+REGION1	Initial internal region	ALL_REG,REG	
+
+ITEMS	_GLOBAL
+
+TS DATA	_GLOBAL
+
+TID DATA	_GLOBAL
+
+ITEMS	REGION1
+	T	ERBIG	New Biogas+Engine	PJ,GW	PRC,ELE,DAYNITE	
+	T	UBSCBIG	New BioMethane Plant	PJ,PJa	PRC,PRE,SEASON	
+
+TS DATA	REGION1
+	ACT_EFF	ERBIG	-	BCL	-	ANNUAL	-	0	0.2	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_EFF	ERBIG	-	BCS	-	ANNUAL	-	0	0.34	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_EFF	ERBIG	-	ISIBFC	-	ANNUAL	-	0	0.18	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_EFF	ERBIG	-	ISIBIB	-	ANNUAL	-	0	0.2	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_EFF	ERBIG	-	ISIBML	-	ANNUAL	-	0	0.34	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_EFF	UBSCBIG	-	BCL	-	ANNUAL	-	0	0.4	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_EFF	UBSCBIG	-	BCS	-	ANNUAL	-	0	0.68	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_EFF	UBSCBIG	-	ISIBFC	-	ANNUAL	-	0	0.36	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_EFF	UBSCBIG	-	ISIBIB	-	ANNUAL	-	0	0.4	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_EFF	UBSCBIG	-	ISIBML	-	ANNUAL	-	0	0.68	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	NCAP_AFS	ERBIG	-	-	-	ANNUAL	UP	0	0.8	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	NCAP_AFS	UBSCBIG	-	-	-	ANNUAL	UP	0	0.8	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	NCAP_COST	ERBIG	-	-	-	-	-	0	36552.1861373727	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	NCAP_COST	UBSCBIG	-	-	-	-	-	0	893.829443227845	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	NCAP_FOM	ERBIG	-	-	-	-	-	0	1785	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	NCAP_FOM	UBSCBIG	-	-	-	-	-	0	89.3829443227845	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	NCAP_TLIFE	ERBIG	-	-	-	-	-	0	20	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	NCAP_TLIFE	UBSCBIG	-	-	-	-	-	0	20	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+
+TID DATA	REGION1
+	NCAP_START	ERBIG	-	-	-	-	-	2025	
+	NCAP_START	UBSCBIG	-	-	-	-	-	2025	
+	PRC_ACTUNT	ERBIG	-	ISIELC	-	-	-	1	
+	PRC_ACTUNT	UBSCBIG	-	ISIBIG	-	-	-	1	
+	PRC_CAPACT	ERBIG	-	-	-	-	-	31.536	
+	PRC_CAPACT	UBSCBIG	-	-	-	-	-	1	
+	TOP-IN	ERBIG	BCL	-	-	-	-	1	
+	TOP-IN	ERBIG	BCS	-	-	-	-	1	
+	TOP-IN	ERBIG	ISIBFC	-	-	-	-	1	
+	TOP-IN	ERBIG	ISIBIB	-	-	-	-	1	
+	TOP-IN	ERBIG	ISIBML	-	-	-	-	1	
+	TOP-IN	UBSCBIG	BCL	-	-	-	-	1	
+	TOP-IN	UBSCBIG	BCS	-	-	-	-	1	
+	TOP-IN	UBSCBIG	ISIBFC	-	-	-	-	1	
+	TOP-IN	UBSCBIG	ISIBIB	-	-	-	-	1	
+	TOP-IN	UBSCBIG	ISIBML	-	-	-	-	1	
+	TOP-OUT	ERBIG	ISIELC	-	-	-	-	1	
+	TOP-OUT	UBSCBIG	ISIBIG	-	-	-	-	1	
+
+TS TRADE	_GLOBAL,REGION1
+
+TID TRADE	_GLOBAL,REGION1
+
