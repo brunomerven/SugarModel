@@ -1,8 +1,8 @@
 SCENARIO	_GLOBAL,REGION1
-Creation Date:	2020/04/17	11:51:53 AM
+Creation Date:	2020/04/19	11:55:02 PM
 Created By:	Export from database C:\models\SugarModel\Sugar_Model_v10_GitExperiments.mdb
 ANSWER Version:	6.9.22
-Scenario:	ETHANOL40	Ethanol plant life extentsion	
+Scenario:	ETH40	ethanol plant life: 40yrs	
 Time Periods:	0	2018	2019	2020	2021	2022	2023	2024	2025	2026	2027	2028	2029	2030	2031	2032	2033	2034	2035	2036	2037	2038	2039	2040
 
 REGIONS	_GLOBAL,REGION1

@@ -1,0 +1,46 @@
+SCENARIO	_GLOBAL,REGION1
+Creation Date:	2020/04/19	11:54:52 PM
+Created By:	Export from database C:\models\SugarModel\Sugar_Model_v10_GitExperiments.mdb
+ANSWER Version:	6.9.22
+Scenario:	ETH10	ethanol plant life: 10yrs	
+Time Periods:	0	2018	2019	2020	2021	2022	2023	2024	2025	2026	2027	2028	2029	2030	2031	2032	2033	2034	2035	2036	2037	2038	2039	2040
+
+REGIONS	_GLOBAL,REGION1
+_GLOBAL	Special region for data parameters with no REG arg	ALL_REG	
+REGION1	Initial internal region	ALL_REG,REG	
+
+ITEMS	_GLOBAL
+
+TS DATA	_GLOBAL
+
+TID DATA	_GLOBAL
+
+ITEMS	REGION1
+	T	UBSCBIE1	New Ethanol 1st Gen	PJ,PJa	PRC,PRE,SEASON	
+
+TS DATA	REGION1
+	ACT_EFF	UBSCBIE1	-	BCS	-	ANNUAL	-	0	0.616090844562723	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	ACT_EFF	UBSCBIE1	-	ISIBML	-	ANNUAL	-	0	0.616090844562723	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	NCAP_AFS	UBSCBIE1	-	-	-	ANNUAL	UP	0	0.8	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	NCAP_COST	UBSCBIE1	-	-	-	-	-	0	973.087181049801	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	NCAP_FOM	UBSCBIE1	-	-	-	-	-	0	50.5982468531857	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	NCAP_TLIFE	UBSCBIE1	-	-	-	-	-	0	10	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	PRC_ACTFLO	UBSCBIE1	-	ISIBFC	-	-	-	0	0.240700366772237	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	PRC_ACTFLO	UBSCBIE1	-	ISIELC	-	-	-	0	3.60474153282261E-03	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+	PRC_ACTFLO	UBSCBIE1	-	ISIHET	-	-	-	0	0.15615489426272	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	null	
+
+TID DATA	REGION1
+	NCAP_START	UBSCBIE1	-	-	-	-	-	2025	
+	PRC_ACTUNT	UBSCBIE1	-	BIE	-	-	-	1	
+	PRC_CAPACT	UBSCBIE1	-	-	-	-	-	1	
+	TOP-IN	UBSCBIE1	BCS	-	-	-	-	1	
+	TOP-IN	UBSCBIE1	ISIBML	-	-	-	-	1	
+	TOP-IN	UBSCBIE1	ISIELC	-	-	-	-	1	
+	TOP-IN	UBSCBIE1	ISIHET	-	-	-	-	1	
+	TOP-OUT	UBSCBIE1	BIE	-	-	-	-	1	
+	TOP-OUT	UBSCBIE1	ISIBFC	-	-	-	-	1	
+
+TS TRADE	_GLOBAL,REGION1
+
+TID TRADE	_GLOBAL,REGION1
+
